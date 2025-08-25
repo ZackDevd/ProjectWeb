@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Account</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+     <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo"><a href="index.html">Avenue Hub</a></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="deals.html">Deals</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="icons">
+        <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="user.html"><i class="fa-solid fa-user"></i></a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="auth-section">
+    <div class="auth-card">
+      <!-- Toggle Buttons -->
+      <div class="form-toggle">
+        <button id="login-toggle" class="active">Login</button>
+        <button id="register-toggle">Register</button>
+      </div>
+
+      <!-- Login Form -->
+      <form class="form active" id="login-form" action="#" method="POST">
+        <h2>Welcome Back</h2>
+        <div class="form-group">
+          <i class="fa fa-envelope"></i>
+          <input type="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <i class="fa fa-lock"></i>
+          <input type="password" name="password" placeholder="Enter your password" required>
+        </div>
+
+        <!-- Remember Me + Forgot Password -->
+        <div class="form-options" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+          <label style="font-size: 14px; color: #ddd;">
+            <input type="checkbox" name="remember"> Remember Me
+          </label>
+          <a href="forgot-password.html" class="forgot-link" style="font-size: 14px; color: #3a6ea5;">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="btn">Login</button>
+      </form>
+
+      <!-- Register Form -->
+      <form class="form" id="register-form" action="#" method="POST">
+        <h2>Create Account</h2>
+        <div class="form-group">
+          <i class="fa fa-user"></i>
+          <input type="text" name="name" placeholder="Full Name" required>
+        </div>
+        <div class="form-group">
+          <i class="fa fa-envelope"></i>
+          <input type="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <i class="fa fa-lock"></i>
+          <input type="password" name="password" placeholder="Create a password" required>
+        </div>
+        <div class="form-group">
+          <i class="fa fa-lock"></i>
+          <input type="password" name="password" placeholder="Confirm your password" required>
+        </div>
+        <button type="submit" class="btn">Register</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- JavaScript for Toggle -->
+  <script>
+    const loginToggle = document.getElementById("login-toggle");
+    const registerToggle = document.getElementById("register-toggle");
+    const loginForm = document.getElementById("login-form");
+    const registerForm = document.getElementById("register-form");
+
+    loginToggle.addEventListener("click", () => {
+      loginToggle.classList.add("active");
+      registerToggle.classList.remove("active");
+      loginForm.classList.add("active");
+      registerForm.classList.remove("active");
+    });
+
+    registerToggle.addEventListener("click", () => {
+      registerToggle.classList.add("active");
+      loginToggle.classList.remove("active");
+      registerForm.classList.add("active");
+      loginForm.classList.remove("active");
+    });
+  </script>
+</body>
+</html>
